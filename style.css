@@ -1,3 +1,4 @@
+/* RESET E BASE */
 * {
   margin: 0;
   padding: 0;
@@ -7,36 +8,11 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-  text-transform: uppercase;
-  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.21);
-  background-color: rgb(135, 113, 99);
-}
-
-nav a {
-  color: black;
-  padding: 20px 20px;
-}
-
-nav ul {
-  display: flex;
-}
-
-nav ul a:hover {
-  background-color: rgb(59, 99, 72);
-  color: white;
-}
-
 body {
+  background-color: #f4f4f4;
   position: relative;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
   z-index: 0;
+  color: #222;
 }
 
 body::before {
@@ -46,189 +22,194 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./imagens/foto\ armado\ bandeira\ israel.png");
+  background-image: url("./imagens/foto armado bandeira israel.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.1; /* Controle da transparência aqui */
+  opacity: 0.07;
   z-index: -1;
 }
 
-/* INICIO MAIN */
-
-main {
+/* HEADER */
+header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 90vh;
+  padding: 15px 30px;
+  background-color: rgb(135, 113, 99);
+  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-#intro {
-  max-width: 550px;
+header h1 {
+  font-size: 46px;
+  text-transform: uppercase;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none; /* remove bolinhas */
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgb(59, 99, 72); /* verde militar */
+  color: white;
+}
+
+
+/* MAIN */
+main {
+  padding: 40px 20px;
+  max-width: 960px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+  gap: 40px;
 }
 
-#apresentacao p:nth-child(1) {
-  font-size: 30px;
+#intro, #hobbieeinteresse, #formacao, #meusConhecimentos, #contato {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#apresentacao p:nth-child(2) {
-  font-size: 40px;
-  font-weight: 500;
+#apresentacao p:first-child {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+#apresentacao h2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+#apresentacao span {
+  color: rgb(59, 99, 72);
+  font-weight: bold;
 }
 
 #redes-sociais {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  margin: 30px 0;
 }
 
 #redes-sociais img {
-  width: 45px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
 }
 
-#apresentacao p:nth-child(2) span {
+#redes-sociais img:hover {
+  transform: scale(1.2);
+}
+
+/* SEÇÕES */
+section h2 {
+  font-size: 28px;
   color: rgb(59, 99, 72);
+  margin-bottom: 15px;
 }
 
-#intro button {
-  padding: 14px 30px;
-  font-size: 20px;
-  border-radius: 10px;
-  border: none;
-  background-color: black;
-  color: white;
-  cursor: pointer;
+section p, section ul li {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-#intro button:hover {
-  color: rgb(59, 99, 72);
+ul {
+  padding-left: 20px;
 }
 
-
-/* INICIO SOBRE MIN */
-#sobreMin {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    height: 100vh;
-    border-top: 2px solid rgb(0, 0, 0);
+ul li {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-bottom: 8px;
 }
 
-#resumo {
-    margin-top: 10%;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#meusConhecimentos {
-    margin-top: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#resumo h2, #meusConhecimentos h2 {
-    font-size: 50px;
-    color: rgb(59, 99, 72);
-}
-
-#resumo p, #meusConhecimentos ul li {
-    font-size: 26px;
-    font-weight: 600;
-}
-
-/* INICIO CONTATO */
-#contato {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    height: 100vh;
-    border-top: 2px solid black;
-    text-align: center;
-}
-
-#contato h2 {
-    margin-top: 5%;
-    font-size: 50px;
-    color: rgb(59, 99, 72);
-}
-
-#contato p {
-    font-size: 26px;
-    font-weight: 600;
-}
-
+/* CONTATO */
 #contato form {
-    text-align: left;
-    font-weight: 600;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-#contato form input, 
-#contato form textarea {
-    height: 40px;
-    width: 400px;
-    max-width: 400px;
-    padding-inline: 5px;
+#contato input, #contato textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 500px;
 }
 
-@media screen and (max-width: 950px) {
-    /* HEADER */
-    header {
-        flex-direction: column;
-    }
+#btnEnviar {
+  width: 200px;
+  background-color: rgb(59, 99, 72);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+}
 
-    /* INICIO MAIN */
-    #intro {
-        padding-inline: 20px;
-    }
+#btnEnviar:hover {
+  background-color: rgb(45, 77, 57);
+}
 
-    #opresentacao p:nth-child(1) {
-        font-size: 27px;
-    }
+/* FOOTER */
+footer {
+  background-color: rgb(135, 113, 99);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
 
-    #opresentacao p:nth-child(2) {
-        font-size: 37px;
-    }
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    #img-dev {
-        display: none;
-    }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    /* INICIO SOBRE MIN */
-    #sobreMin {
-        flex-direction: column;
-        gap: 10px;
-    }
+  main {
+    padding: 20px 10px;
+  }
 
-    #resumo, #meusConhecimentos {
-        margin-top: 0;
-        padding-inline: 20px;
-    }
+  #contato input, #contato textarea {
+    max-width: 100%;
+  }
 
-    #resumo h2, #meusConhecimentos h2 {
-        font-size: 40px;
-    }
-
-    #resumo p, #meusConhecimentos ul li {
-        font-size: 15px;
-    }
-
-    /* INICIO CONTATO */
-    #contato {
-        padding-inline: 20px;
-    }
-
-    #contato h2 {
-        font-size: 40px;
-    }
-
-    #contato form input, 
-    #contato form textarea {
-        width: 300px;
-    }
+  #btnEnviar {
+    width: 100%;
+  }
 }
